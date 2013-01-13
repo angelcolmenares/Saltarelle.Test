@@ -1,0 +1,23 @@
+/opt/mono/bin/sc \
+"/define:SALTARELLE" \
+"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.Linq.dll" \
+"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.jQuery.dll" \
+"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.Web.dll" \
+"/r:/home/angel/Projects/Tests/saltarelle/lib/mscorlib.dll" \
+/t:exe \
+"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/Main.cs" \
+"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/AssemblyInfo.cs" \
+"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Modelos/Person.cs" 
+
+cp Main.js /home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Web/js/
+
+
+#/opt/mono/bin/mcs
+# /noconfig "/out:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/bin/Debug/Saltarelle.Test.exe" 
+#"/r:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/packages/Saltarelle.jQuery.UI.1.7.1/lib/Script.jQuery.UI.dll" 
+#"/r:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/packages/Saltarelle.jQuery.1.7.1/lib/Script.jQuery.dll" 
+#"/r:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/packages/Saltarelle.Web.1.7.1/lib/Script.Web.dll"
+# "/r:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/packages/Saltarelle.Runtime.1.7.1/tools/Assemblies/mscorlib.dll" 
+#"/r:/opt/mono/lib/mono/4.0/System.Core.dll"
+# /nologo /warn:4 /debug:full /optimize- /codepage:utf8 -nostdlib "/define:TRACE;DEBUG;CLIENT"  /t:exe "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/Main.cs" "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/AssemblyInfo.cs" "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Modelos/Person.cs" 
+
