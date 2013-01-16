@@ -4,9 +4,61 @@ using MyApp.Modelos;
 using System.Serialization;
 using System.Html;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Saltarelle.Test
 {
+	/*
+	[IgnoreNamespace, Imported (IsRealType = true), ScriptName ("$")]
+	[Serializable]
+	public class PluginObservable{
+
+		[ScriptAlias("$.fn")]
+		public static ArrayObservable<T> Observable<T>(){
+			jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").SlideToggle());
+			return null;
+		}
+	}
+
+	public class ArrayObservable<T>{
+
+	}
+*/
+
+	/*
+
+	[IgnoreNamespace, Imported (IsRealType = true), ScriptName ("$")]
+	[Serializable]
+	public class ArrayObservable<T>{
+
+	}
+
+	static class MyPluginExtensions {
+		[InstanceMethodOnFirstArgument]
+		public static jQueryObject MyPlugin(this jQueryObject jq) { return null; }
+		
+		//[InlineCode("{this}.myPlugin('option', 'myOption', {value})")]
+		public static jQueryObject MySetPluginOption(this jQueryObject jq, string value) { return null; }
+	}
+	
+	//[ScriptAlias("$.fn")]
+	public class MyPluginClass{
+		public static void MyPlugin( string opts)
+		{
+
+			//if (Script.GetScriptType(opts) == "string" && (string)opts == "option") {
+			//	string optionName = Arguments.GetArgument(1);
+			//	object optionValue = Arguments.GetArgument(2);
+			//	// Set the option
+			//}
+			//else {
+			//// Construct the plugin
+			//}
+
+		}
+	}
+
+	*/
 
 	public class Program {
 
@@ -19,9 +71,9 @@ namespace Saltarelle.Test
 		 void Attach() {
 			jQuery.OnDocumentReady(() => {
 
-				//var date = new DateTime(2013,12,31);
+				var date = new DateTime(2013,12,31);
 
-				//jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").Html(date.ToString()));
+				jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").Html(date.ToString()));
 
 				var person = new Person(){Name="Angel Ignacio Colmenares", Birthday= new DateTime(2013,12,31)};
 				jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").SlideToggle());
@@ -144,6 +196,8 @@ namespace Saltarelle.Test
 			parent.AppendChild(t);
 		}
 
+
 	}
+
 
 }

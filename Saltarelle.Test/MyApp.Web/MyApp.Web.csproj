@@ -40,6 +40,12 @@
     <Content Include="js\linq.js" />
     <Content Include="js\mscorlib.js" />
     <Content Include="js\jquery-1.8.2.js" />
+    <Content Include="js\Movies01.js" />
+    <Content Include="js\jquery.views.js" />
+    <Content Include="js\jsrender.js" />
+    <Content Include="js\Main.js" />
+    <Content Include="js\jquery.observable.js" />
+    <Content Include="css\demos.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -57,6 +63,7 @@
   </ProjectExtensions>
   <ItemGroup>
     <Folder Include="js\" />
+    <Folder Include="css\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="json\persons.json" />

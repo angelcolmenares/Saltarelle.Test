@@ -38,6 +38,8 @@
     <Compile Include="..\MyApp.Modelos\Person.cs">
       <Link>Person.cs</Link>
     </Compile>
+    <Compile Include="Observable.cs" />
+    <Compile Include="Movies01.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,6 +58,9 @@
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>..\..\lib\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Script.jQuery.UI">
+      <HintPath>..\..\..\lib\Script.jQuery.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

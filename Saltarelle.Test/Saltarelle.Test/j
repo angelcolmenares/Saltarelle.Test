@@ -1,15 +1,29 @@
 /opt/mono/bin/sc \
 "/define:SALTARELLE" \
-"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.Linq.dll" \
-"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.jQuery.dll" \
-"/r:/home/angel/Projects/Tests/saltarelle/lib/Script.Web.dll" \
-"/r:/home/angel/Projects/Tests/saltarelle/lib/mscorlib.dll" \
+"/r:../../lib/Script.Linq.dll" \
+"/r:../../lib/Script.jQuery.dll" \
+"/r:../../lib/Script.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
 /t:exe \
-"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/Main.cs" \
-"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/AssemblyInfo.cs" \
-"/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Modelos/Person.cs" 
+"Movies01.cs" \
+"Observable.cs" 
+cp Movies01.js ../MyApp.Web/js/
 
-cp Main.js /home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Web/js/
+
+
+#/opt/mono/bin/sc \
+#"/define:SALTARELLE" \
+#"/r:../../lib/Script.Linq.dll" \
+#"/r:../../lib/Script.jQuery.dll" \
+#"/r:../../lib/Script.Web.dll" \
+#"/r:../../lib/mscorlib.dll" \
+#/t:exe \
+#"Main.cs" \
+#"AssemblyInfo.cs" \
+#"../MyApp.Modelos/Person.cs" 
+
+#cp Main.js ../MyApp.Web/js/
+
 
 
 #/opt/mono/bin/mcs
@@ -20,4 +34,11 @@ cp Main.js /home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Web/js/
 # "/r:/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/packages/Saltarelle.Runtime.1.7.1/tools/Assemblies/mscorlib.dll" 
 #"/r:/opt/mono/lib/mono/4.0/System.Core.dll"
 # /nologo /warn:4 /debug:full /optimize- /codepage:utf8 -nostdlib "/define:TRACE;DEBUG;CLIENT"  /t:exe "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/Main.cs" "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/Saltarelle.Test/AssemblyInfo.cs" "/home/angel/Projects/Tests/saltarelle/Saltarelle.Test/MyApp.Modelos/Person.cs" 
+
+#(function(){
+#var a=function(){};
+#a.prototype={$0:function(){
+#$(function(){
+#$('#main h2').click(function(b){$('#main p').slideToggle();});});}};a.$0=function(){var b=new a();$(Function.mkdel(b,b.$0));};Type.registerClass(global,'Saltarelle.Test.Program',a,Object);})();
+#jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").SlideToggle());
 
