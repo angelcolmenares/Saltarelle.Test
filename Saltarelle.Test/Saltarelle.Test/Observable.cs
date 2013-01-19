@@ -109,25 +109,6 @@ namespace Saltarelle.Test
 		{
 		}
 
-		[InlineCode ("view.refresh()")]
-		public static void ViewRefresh ()
-		{
-		}
-
-		/// <summary>
-		/// For a view or a tag, return jQuery object with the content nodes,
-		/// </summary>
-		/// <param name='selector'>
-		/// selector
-		/// </param>
-		/// <param name='deep'>
-		/// deep
-		/// </param>
-		[InlineCode ("view.contents({selector},{deep})")]
-		public static jQueryObject ViewContents ( string selector, bool deep)
-		{
-			return null;
-		}
 
 		[InlineCode ("$.link.{@template}({selector},{data})")] 
 		public static jQueryObject Link<T> (string template, [SyntaxValidation ("cssSelector")] string selector, T data)
@@ -248,10 +229,26 @@ namespace Saltarelle.Test
 		public Element ParentElem {get{ return null; } set{} }
 		public string Type {get{ return null; } set{} }
 		public ObservableEventData<IList<T>> Parent {get{ return null; } set{} }
+
 		public T Data {
 			get { return default(T);}
 			set {}
 		}
+
+		[InlineCode ("{this}.refresh()")] 
+		public void Refresh(){
+
+		}
+
+		[InlineCode ("{this}.contents({selector},{deep})")] 
+		public jQueryObject Contents(string selector, bool deep ){
+			return null;
+		}
+		
+		public string Tmpl {
+			get;set;
+		}
+
 	}
 
 
@@ -275,25 +272,6 @@ namespace Saltarelle.Test
 		}
 	}
 
-	[Imported]
-	[Serializable]
-	[IgnoreNamespace]
-	public class JsView{
-		JsView(){}
-
-		public void Refres(){
-			Observable.ViewRefresh();
-		}
-
-		public jQueryObject Contents(string selector, bool deep ){
-			return Observable.ViewContents(selector, deep);
-		}
-
-		public string Template {
-			get;set;
-		}
-
-	}
 
 }
 

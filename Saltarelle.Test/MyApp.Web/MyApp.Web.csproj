@@ -55,6 +55,9 @@
     <Content Include="js\Demo03.js" />
     <Content Include="demos\04.html" />
     <Content Include="js\Demo04.js" />
+    <Content Include="js\TODOSDemo.js" />
+    <Content Include="demos\TODOSDemo.html" />
+    <Content Include="css\todos.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

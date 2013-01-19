@@ -6,6 +6,21 @@
 "/r:../../lib/Script.Web.dll" \
 "/r:../../lib/mscorlib.dll" \
 /t:exe \
+"TODOSDemo.cs" \
+"Observable.cs" 
+cp TODOSDemo.js ../MyApp.Web/js/
+echo "ready TODOSDemo.js"
+
+:<<comments
+
+/opt/mono/bin/sc \
+"/define:SALTARELLE" \
+"/debug" \
+"/r:../../lib/Script.Linq.dll" \
+"/r:../../lib/Script.jQuery.dll" \
+"/r:../../lib/Script.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
+/t:exe \
 "Demo04.cs" \
 "Observable.cs" 
 cp Demo04.js ../MyApp.Web/js/
@@ -53,6 +68,8 @@ echo "ready Movies02.js"
 cp Movies01.js ../MyApp.Web/js/
 
 echo "ready Movies01.js"
+
+comments
 
 #/opt/mono/bin/sc \
 #"/define:SALTARELLE" \

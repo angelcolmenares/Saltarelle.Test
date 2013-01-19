@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Sample inspired by Backbone Todos sample: http://documentcloud.github.com/backbone/examples/todos/index.html -->
+<html>
+<head>
+	<title>JsViews Demo: Todos</title>
+	<script src="../js/mscorlib.js" type="text/javascript"></script>
+	<script src="../js/linq.js" type="text/javascript"></script> 
+	<script src="../js/jquery-1.8.2.js" type="text/javascript"></script>
+	<script src="../js/jsrender.js" type="text/javascript"></script>
+	<script src="../js/jquery.observable.js" type="text/javascript"></script>
+	<script src="../js/jquery.views.js" type="text/javascript"></script>
+	<script src="../js/TODOSDemo.js" type="text/javascript"></script> 
+	<link href= "../css/todos.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<div id="todoapp">
+	<div class="nav"><a href="../demos.html">JsViews Demos</a></div>
+	<h1>Todos</h1>
+
+	<input id="new-todo" placeholder="What needs to be done?" />
+
+	<ul id="todo-list"></ul>
+
+	<div id="todo-stats">
+		<span data-link="~remainingMessage(remaining)"></span>
+		<a href="#" data-link="{:~completedMessage(completed)}" class="todo-clear"></a>
+	</div>
+</div>
+
+<ul id="instructions">
+	<li>Todos: enter to add, double-click to edit...</li>
+</ul>
+
+<!-- Templates -->
+<script type="text/x-jsrender" id="item-template">
+	<li>
+		<input name="{{:#index}}" data-link="done" class="check" type="checkbox" />
+		<div data-link="{:content || 'empty todo...'} css-text-decoration{:done ? 'line-through' : ''}"
+			class="todo-content"></div>
+		<span class="todo-destroy"></span>
+	</li>
+</script>
+
+<script type="text/x-jsrender" id="edit-template">
+	<li class="editing">
+		<input data-link="content" class="todo-input" />
+	</li>
+</script>
+
+<script>
+</script>
+</body>
+</html>
