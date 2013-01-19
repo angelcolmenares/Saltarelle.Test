@@ -8,57 +8,8 @@ using System.Runtime.CompilerServices;
 
 namespace Saltarelle.Test
 {
-	/*
-	[IgnoreNamespace, Imported (IsRealType = true), ScriptName ("$")]
-	[Serializable]
-	public class PluginObservable{
-
-		[ScriptAlias("$.fn")]
-		public static ArrayObservable<T> Observable<T>(){
-			jQuery.Select("#main h2").Click(evt => jQuery.Select("#main p").SlideToggle());
-			return null;
-		}
-	}
-
-	public class ArrayObservable<T>{
-
-	}
-*/
-
-	/*
-
-	[IgnoreNamespace, Imported (IsRealType = true), ScriptName ("$")]
-	[Serializable]
-	public class ArrayObservable<T>{
-
-	}
-
-	static class MyPluginExtensions {
-		[InstanceMethodOnFirstArgument]
-		public static jQueryObject MyPlugin(this jQueryObject jq) { return null; }
-		
-		//[InlineCode("{this}.myPlugin('option', 'myOption', {value})")]
-		public static jQueryObject MySetPluginOption(this jQueryObject jq, string value) { return null; }
-	}
 	
-	//[ScriptAlias("$.fn")]
-	public class MyPluginClass{
-		public static void MyPlugin( string opts)
-		{
 
-			//if (Script.GetScriptType(opts) == "string" && (string)opts == "option") {
-			//	string optionName = Arguments.GetArgument(1);
-			//	object optionValue = Arguments.GetArgument(2);
-			//	// Set the option
-			//}
-			//else {
-			//// Construct the plugin
-			//}
-
-		}
-	}
-
-	*/
 
 	public class Program {
 

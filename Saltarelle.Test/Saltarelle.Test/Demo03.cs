@@ -1,8 +1,6 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using jQueryApi;
-using System.Collections;
 
 
 namespace Saltarelle.Test

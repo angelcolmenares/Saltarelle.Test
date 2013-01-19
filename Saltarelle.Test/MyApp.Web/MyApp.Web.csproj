@@ -53,6 +53,8 @@
     <Content Include="js\Movies02.js" />
     <Content Include="demos\03.html" />
     <Content Include="js\Demo03.js" />
+    <Content Include="demos\04.html" />
+    <Content Include="js\Demo04.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">

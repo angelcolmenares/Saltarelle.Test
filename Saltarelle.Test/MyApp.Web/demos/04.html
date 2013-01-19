@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../js/mscorlib.js" type="text/javascript"></script>
+	<script src="../js/jquery-1.8.2.js" type="text/javascript"></script>
+	<script src="../js/jsrender.js" type="text/javascript"></script>
+	<script src="../js/jquery.observable.js" type="text/javascript"></script>
+	<script src="../js/jquery.views.js" type="text/javascript"></script>
+	<script src="../js/Demo04.js" type="text/javascript"></script>  
+	<link href="../css/demos.css" rel="stylesheet" type="text/css" />
+	<link href="../css/masterdetail.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="nav"><a href="../demos.html">JsViews Demos</a></div>
+
+<h3>Data Linking to Form Elements</h3>
+
+<h4>Purchase a movie ticket</h4>
+
+<div id="moviePurchase"></div>
+
+<script id="moviePurchaseTemplate" type="text/x-jsrender">
+	<div class="box">
+		<div class="subhead" data-link="~selectedTitle(selectedMovie) || 'Choose a movie'"></div>
+
+		<select data-link="selectedMovie">
+			<option value=-1>Choose...</option>
+			{{for ~movies}}
+				<option value="{{:#index}}">{{>title}}</option>
+			{{/for}}
+		</select>
+
+		<div data-link="visible{:selectedMovie!=-1 }">
+
+			<div class="subhead" data-link="{:name ? 'Name:' : 'Type your name here:'}"></div>
+			<div><input data-link="name" placeholder="Enter your name..."/></div>
+
+			<div data-link="visible{:!!name}">
+				<div class="subhead" data-link="{:request ? 'Special requests:' : 'Type special requests here:'} visible{:!!name}"></div>
+				<div><textarea data-link="request" rows="4" cols="25"  placeholder="Enter any special requests..."></textarea></div>
+			</div>
+		</div>
+	</div>
+
+	<div data-link="visible{:name && selectedMovie!=-1}">
+
+		<h3>Ticket order form</h3>
+
+		<div class="box" data-link="visible{:!!name}">
+			<div>Ticket for <em data-link="name" ></em> to movie: <em data-link="~selectedTitle(selectedMovie)" ></em></div>
+			<div data-link="visible{:!!request}"><em>Your special request:</em> <pre data-link="request" ></pre></div>
+			<div>
+				<b>Ticket Price:</b> <span data-link="~convertedPrice(selectedMovie, selectedCurrency)" ></span>
+				<div>Choose currency for payment: <input type="checkbox" data-link="~app.chooseCurrency" /></div>
+			</div>
+			<div>
+				<button id="submitOrder">Submit order</button>
+			</div>
+		</div>
+
+		<div class="box" data-link="visible{:~app.chooseCurrency}">
+			<div class="subhead">Choose Currency:</div>
+			{{for ~currencies ~details=#data}}
+				<input type="radio" name="currencyPicker" value="{{:#index}}" data-link="~details.selectedCurrency" />{{:label}}<br/>
+			{{/for}}
+		</div>
+
+	</div>
+</script>
+
+<script type="text/javascript">
+
+	
+</script>
+</body>
+</html>

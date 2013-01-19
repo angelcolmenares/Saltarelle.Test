@@ -1,9 +1,7 @@
 using System.Collections.Generic;
 using jQueryApi;
-using System.Serialization;
 using System.Html;
 using System;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.CodeAnalysis;
 
@@ -65,10 +63,20 @@ namespace Saltarelle.Test
 		}
 
 		[ScriptAlias ("$.templates")]
-		public static void Templates <T>( T templates)
+		public static void Templates <T>( T templates) where T:class
 		{
 		}
-		
+
+		[ScriptAlias ("$.templates")]
+		public static void Templates (JsDictionary<string,string> templates) 
+		{
+		}
+
+		[ScriptAlias ("$.templates")]
+		public static void Templates( string name, [SyntaxValidation ("cssSelector")] string selector)
+		{
+		}
+
 		[InlineCode ("$.view({element})")]
 		public static ObservableEventData<T> View <T>(Element element )
 		{
@@ -86,9 +94,39 @@ namespace Saltarelle.Test
 		{
 		}
 
+		[InlineCode ("$.views.helpers({config})")]
+		public static void ViewsHelpers ( JsDictionary<string,object> config )
+		{
+		}
+
 		[InlineCode ("$.views.converters({anonType})")]
 		public static void ViewsConverters ( object anonType)
 		{
+		}
+
+		[InlineCode ("$.views.converters({config})")]
+		public static void ViewsConverters ( JsDictionary<string,object> config)
+		{
+		}
+
+		[InlineCode ("view.refresh()")]
+		public static void ViewRefresh ()
+		{
+		}
+
+		/// <summary>
+		/// For a view or a tag, return jQuery object with the content nodes,
+		/// </summary>
+		/// <param name='selector'>
+		/// selector
+		/// </param>
+		/// <param name='deep'>
+		/// deep
+		/// </param>
+		[InlineCode ("view.contents({selector},{deep})")]
+		public static jQueryObject ViewContents ( string selector, bool deep)
+		{
+			return null;
 		}
 
 		[InlineCode ("$.link.{@template}({selector},{data})")] 
@@ -100,6 +138,14 @@ namespace Saltarelle.Test
 		[InlineCode ("$.link.{@template}({selector},{data},{options})")] 
 		public static jQueryObject Link<T> (string template, [SyntaxValidation ("cssSelector")] string selector,
 		                                    T data, LinkOptions options)
+		{
+			return null;
+		}
+
+
+		[InlineCode ("$.link.{@template}({selector},{data},{contextHelpers})")] 
+		public static jQueryObject Link<T> (string template, [SyntaxValidation ("cssSelector")] string selector,
+		                                    T data, JsDictionary<string,object> contextHelpers)
 		{
 			return null;
 		}
@@ -221,7 +267,7 @@ namespace Saltarelle.Test
 	[Serializable]
 	[IgnoreNamespace]
 	[PreserveMemberCase]
-	class SelectedObject<T>{
+	public class SelectedObject<T>{
 
 		public ObservableEventData<T> SelectedItem{
 			get { return null;}
@@ -229,6 +275,25 @@ namespace Saltarelle.Test
 		}
 	}
 
+	[Imported]
+	[Serializable]
+	[IgnoreNamespace]
+	public class JsView{
+		JsView(){}
+
+		public void Refres(){
+			Observable.ViewRefresh();
+		}
+
+		public jQueryObject Contents(string selector, bool deep ){
+			return Observable.ViewContents(selector, deep);
+		}
+
+		public string Template {
+			get;set;
+		}
+
+	}
 
 }
 
