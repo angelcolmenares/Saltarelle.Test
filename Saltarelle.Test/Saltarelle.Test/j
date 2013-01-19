@@ -11,7 +11,7 @@
 cp TODOSDemo.js ../MyApp.Web/js/
 echo "ready TODOSDemo.js"
 
-:<<comments
+#:<<comments
 
 /opt/mono/bin/sc \
 "/define:SALTARELLE" \
@@ -69,7 +69,7 @@ cp Movies01.js ../MyApp.Web/js/
 
 echo "ready Movies01.js"
 
-comments
+#comments
 
 #/opt/mono/bin/sc \
 #"/define:SALTARELLE" \
