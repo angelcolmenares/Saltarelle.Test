@@ -46,6 +46,7 @@
     <Compile Include="Observable.cs" />
     <Compile Include="Movies01.cs" />
     <Compile Include="Movies02.cs" />
+    <Compile Include="Demo03.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

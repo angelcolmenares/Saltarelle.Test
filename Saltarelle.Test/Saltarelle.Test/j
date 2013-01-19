@@ -6,6 +6,20 @@
 "/r:../../lib/Script.Web.dll" \
 "/r:../../lib/mscorlib.dll" \
 /t:exe \
+"Demo03.cs" \
+"Observable.cs" 
+cp Demo03.js ../MyApp.Web/js/
+echo "ready Demo03.js"
+
+
+/opt/mono/bin/sc \
+"/define:SALTARELLE" \
+"/debug" \
+"/r:../../lib/Script.Linq.dll" \
+"/r:../../lib/Script.jQuery.dll" \
+"/r:../../lib/Script.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
+/t:exe \
 "Movies02.cs" \
 "Observable.cs" 
 cp Movies02.js ../MyApp.Web/js/

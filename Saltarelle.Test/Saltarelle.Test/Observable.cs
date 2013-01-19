@@ -86,6 +86,11 @@ namespace Saltarelle.Test
 		{
 		}
 
+		[InlineCode ("$.views.converters({anonType})")]
+		public static void ViewsConverters ( object anonType)
+		{
+		}
+
 		[InlineCode ("$.link.{@template}({selector},{data})")] 
 		public static jQueryObject Link<T> (string template, [SyntaxValidation ("cssSelector")] string selector, T data)
 		{
@@ -113,6 +118,12 @@ namespace Saltarelle.Test
 			return null;
 		}
 
+		//$("#myLinkedContent").link( true, person );
+		[InlineCode ("{element}.link({linkContent},{data})")]
+		public static jQueryObject Link<T>(this jQueryObject element, bool linkContent, T data)
+		{
+			return null;
+		}
 	}
 
 	[IgnoreNamespace, Imported (IsRealType = true)]
@@ -164,6 +175,12 @@ namespace Saltarelle.Test
 		{
 			return null;
 		}
+
+		public ObjectObservable<T> SetProperty(JsDictionary<string,object> values)
+		{
+			return null;
+		}
+
 	}
 
 	[Imported]

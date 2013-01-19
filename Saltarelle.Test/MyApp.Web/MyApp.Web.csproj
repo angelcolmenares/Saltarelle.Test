@@ -51,6 +51,8 @@
     <Content Include="css\masterdetail.css" />
     <Content Include="resources\close.png" />
     <Content Include="js\Movies02.js" />
+    <Content Include="demos\03.html" />
+    <Content Include="js\Demo03.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
