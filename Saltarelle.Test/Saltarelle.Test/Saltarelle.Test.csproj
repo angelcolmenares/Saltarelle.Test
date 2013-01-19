@@ -22,6 +22,11 @@
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <Externalconsole>True</Externalconsole>
+    <CustomCommands>
+      <CustomCommands>
+        <Command type="Build" command="j" workingdir="${ProjectDir}" externalConsole="True" pauseExternalConsole="True" />
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>none</DebugType>
@@ -40,6 +45,7 @@
     </Compile>
     <Compile Include="Observable.cs" />
     <Compile Include="Movies01.cs" />
+    <Compile Include="Movies02.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

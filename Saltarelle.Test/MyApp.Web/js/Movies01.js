@@ -1,1 +1,99 @@
-﻿(function(){var a=function(h){var i=function(){};i.prototype={data:function(){return null;},insert:function(j,k){return null;},remove:function(j,k){return null;},move:function(j,k,l){return null;},refresh:function(j){return null;}};Type.registerGenericClassInstance(i,a,[h],function(){return Object;},function(){return [];});return i;};Type.registerGenericClass(global,'Saltarelle.Test.ArrayObservable$1',a,1);var b=function(){};b.createInstance=function(){return b.$ctor();};b.$ctor=function(){var h={};h.target=null;return h;};var c=function(){};c.createInstance=function(){return c.$ctor();};c.$ctor=function(){var h={};h.name=null;h.releaseYear=null;return h;};var d=function(){this.$5=null;this.$4=0;};d.prototype={$1:function(){$(Function.mkdel(this,function(){this.$2();var h=g.$ctor();h.movieTemplate='#movieTemplate';h.textOnlyTemplate='#textOnlyTemplate';var i=h;$.templates(i);$('#renderedListContainer').html($.render.movieTemplate(this.$5));var j=this.$5;var k=b.$ctor();k.target='replace';$.link.textOnlyTemplate('.linkedListPlaceholder',j,k);$.link.movieTemplate('#linkedListContainer',this.$5);$('#buttonAddMovie').click(Function.mkdel(this,this.$0));$('#buttonRemoveLastMovie').click(Function.mkdel(this,this.$3));}));},$0:function(h){var i=$.observable(this.$5);var j=this.$5.length;var k=c.$ctor();k.name='new movie '+(++this.$4).toString();k.releaseYear='YYYY';i.insert(j,k);},$3:function(h){$.observable(this.$5).remove(this.$5.length-1,1);},$2:function(){this.$4=0;this.$5=[];var h=this.$5;var i=c.$ctor();i.name='The Red Violin';i.releaseYear='1998';h.add(i);var j=this.$5;var k=c.$ctor();k.name='Eyes Wide Shut';k.releaseYear='1999';j.add(k);var l=this.$5;var m=c.$ctor();m.name='The Inheritance';m.releaseYear='1976';l.add(m);}};d.main=function(){var h=new d();$(Function.mkdel(h,h.$1));};var e=function(h){var i=function(){};i.prototype={data:function(){return h.getDefaultValue();},observe:function(j,k){},unobserve:function(j){},setProperty:function(j,k){return null;}};Type.registerGenericClassInstance(i,e,[h],function(){return Object;},function(){return [];});return i;};Type.registerGenericClass(global,'Saltarelle.Test.ObjectObservable$1',e,1);var f=function(){};f.createInstance=function(){return f.$ctor();};f.$ctor=function(){var h={};h.Id=0;h.Name=null;return h;};var g=function(){};g.createInstance=function(){return g.$ctor();};g.$ctor=function(){var h={};h.movieTemplate=null;h.textOnlyTemplate=null;return h;};Type.registerClass(global,'Saltarelle.Test.LinkOptions',b,Object);Type.registerClass(global,'Saltarelle.Test.Movie',c,Object);Type.registerClass(global,'Saltarelle.Test.Movies01',d,Object);Type.registerClass(global,'Saltarelle.Test.Test',f,Object);Type.registerClass(global,'Saltarelle.Test.TestTemplates',g,Object);d.main();})();
+﻿(function() {
+	////////////////////////////////////////////////////////////////////////////////
+	// Saltarelle.Test.Movies01.Movie
+	var $Saltarelle_$Test_Movies01$Movie = function() {
+	};
+	$Saltarelle_$Test_Movies01$Movie.createInstance = function() {
+		return $Saltarelle_$Test_Movies01$Movie.$ctor();
+	};
+	$Saltarelle_$Test_Movies01$Movie.$ctor = function() {
+		var $this = {};
+		$this.name = null;
+		$this.releaseYear = null;
+		return $this;
+	};
+	////////////////////////////////////////////////////////////////////////////////
+	// Saltarelle.Test.Movies01.Templates
+	var $Saltarelle_$Test_Movies01$Templates = function() {
+	};
+	$Saltarelle_$Test_Movies01$Templates.createInstance = function() {
+		return $Saltarelle_$Test_Movies01$Templates.$ctor();
+	};
+	$Saltarelle_$Test_Movies01$Templates.$ctor = function() {
+		var $this = {};
+		$this.MovieTemplate = null;
+		$this.TextOnlyTemplate = null;
+		$this.MovieTemplate = '#movieTemplate';
+		$this.TextOnlyTemplate = '#textOnlyTemplate';
+		return $this;
+	};
+	////////////////////////////////////////////////////////////////////////////////
+	// Saltarelle.Test.Movies01
+	var $Saltarelle_Test_Movies01 = function() {
+		this.$movies = null;
+		this.$count = 0;
+	};
+	$Saltarelle_Test_Movies01.prototype = {
+		$attach: function() {
+			$(Function.mkdel(this, function() {
+				this.$populateMovies();
+				var templates = $Saltarelle_$Test_Movies01$Templates.$ctor();
+				$.templates(templates);
+				this.$renderMovieTemplate();
+				this.$linkTextOnlyTemplate();
+				this.$linkMovieTemplate();
+				$('#buttonAddMovie').click(Function.mkdel(this, this.$addMovie));
+				$('#buttonRemoveLastMovie').click(Function.mkdel(this, this.$removeLastMovie));
+			}));
+		},
+		$addMovie: function(evt) {
+			var $t2 = $.observable(this.$movies);
+			var $t3 = this.$movies.length;
+			var $t1 = $Saltarelle_$Test_Movies01$Movie.$ctor();
+			$t1.name = 'new movie ' + (++this.$count).toString();
+			$t1.releaseYear = 'YYYY';
+			$t2.insert($t3, $t1);
+		},
+		$removeLastMovie: function(evt) {
+			$.observable(this.$movies).remove(this.$movies.length - 1, 1);
+		},
+		$populateMovies: function() {
+			this.$count = 0;
+			this.$movies = [];
+			var $t2 = this.$movies;
+			var $t1 = $Saltarelle_$Test_Movies01$Movie.$ctor();
+			$t1.name = 'The Red Violin';
+			$t1.releaseYear = '1998';
+			$t2.add($t1);
+			var $t4 = this.$movies;
+			var $t3 = $Saltarelle_$Test_Movies01$Movie.$ctor();
+			$t3.name = 'Eyes Wide Shut';
+			$t3.releaseYear = '1999';
+			$t4.add($t3);
+			var $t6 = this.$movies;
+			var $t5 = $Saltarelle_$Test_Movies01$Movie.$ctor();
+			$t5.name = 'The Inheritance';
+			$t5.releaseYear = '1976';
+			$t6.add($t5);
+		},
+		$renderMovieTemplate: function() {
+			//"$.render.MovieTemplate(movies)"
+			$('#renderedListContainer').html($.render.MovieTemplate(this.$movies));
+		},
+		$linkTextOnlyTemplate: function() {
+			//$.link.TextOnlyTemplate(".linkedListPlaceholder" , movies, { target: "replace" });
+			$.link.TextOnlyTemplate('.linkedListPlaceholder', this.$movies, { target: 'replace' });
+		},
+		$linkMovieTemplate: function() {
+			$.link.MovieTemplate('#linkedListContainer', this.$movies);
+		}
+	};
+	$Saltarelle_Test_Movies01.main = function() {
+		var $t1 = new $Saltarelle_Test_Movies01();
+		$(Function.mkdel($t1, $t1.$attach));
+	};
+	Type.registerClass(null, 'Saltarelle.$Test.Movies01$Movie', $Saltarelle_$Test_Movies01$Movie, Object);
+	Type.registerClass(null, 'Saltarelle.$Test.Movies01$Templates', $Saltarelle_$Test_Movies01$Templates, Object);
+	Type.registerClass(global, 'Saltarelle.Test.Movies01', $Saltarelle_Test_Movies01, Object);
+	$Saltarelle_Test_Movies01.main();
+})();

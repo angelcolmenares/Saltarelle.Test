@@ -1,5 +1,20 @@
 /opt/mono/bin/sc \
 "/define:SALTARELLE" \
+"/debug" \
+"/r:../../lib/Script.Linq.dll" \
+"/r:../../lib/Script.jQuery.dll" \
+"/r:../../lib/Script.Web.dll" \
+"/r:../../lib/mscorlib.dll" \
+/t:exe \
+"Movies02.cs" \
+"Observable.cs" 
+cp Movies02.js ../MyApp.Web/js/
+
+echo "ready Movies02.js"
+
+/opt/mono/bin/sc \
+"/define:SALTARELLE" \
+"/debug" \
 "/r:../../lib/Script.Linq.dll" \
 "/r:../../lib/Script.jQuery.dll" \
 "/r:../../lib/Script.Web.dll" \
@@ -9,10 +24,11 @@
 "Observable.cs" 
 cp Movies01.js ../MyApp.Web/js/
 
-
+echo "ready Movies01.js"
 
 #/opt/mono/bin/sc \
 #"/define:SALTARELLE" \
+#"/debug" \
 #"/r:../../lib/Script.Linq.dll" \
 #"/r:../../lib/Script.jQuery.dll" \
 #"/r:../../lib/Script.Web.dll" \

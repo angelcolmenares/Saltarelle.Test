@@ -46,6 +46,11 @@
     <Content Include="js\Main.js" />
     <Content Include="js\jquery.observable.js" />
     <Content Include="css\demos.css" />
+    <Content Include="demos\01.html" />
+    <Content Include="demos\02.html" />
+    <Content Include="css\masterdetail.css" />
+    <Content Include="resources\close.png" />
+    <Content Include="js\Movies02.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global.asax.cs">
@@ -64,6 +69,8 @@
   <ItemGroup>
     <Folder Include="js\" />
     <Folder Include="css\" />
+    <Folder Include="demos\" />
+    <Folder Include="resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="json\persons.json" />

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script src="../js/mscorlib.js" type="text/javascript"></script>
+	<script src="../js/jquery-1.8.2.js" type="text/javascript"></script>
+	<script src="../js/jsrender.js" type="text/javascript"></script>
+	<script src="../js/jquery.observable.js" type="text/javascript"></script>
+	<script src="../js/jquery.views.js" type="text/javascript"></script>
+	<script src="../js/Movies01.js" type="text/javascript"></script>
+	<link href="../css/demos.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="nav"><a href="../demos.html">JsViews Demos</a></div>
+
+<script id="movieTemplate" type="text/x-jsrender">
+	<li>
+		<i>{{>name}}</i> ({{>releaseYear}})
+	</li>
+</script>
+
+<!--Note that a template does not have to include HTML elements-->
+<script id="textOnlyTemplate" type="text/x-jsrender">
+	- {{>name}} ({{>releaseYear}})
+</script>
+
+<h3>Rendering templates, and linking to changes in data:</h3>
+
+<div class="subhead">Insert HTML from a rendered template, as innerHTML under a container element. (Uses only JsRender.)</div>
+<div class="box">
+	<ul id="renderedListContainer"></ul>
+</div>
+
+<div class="subhead">Insert HTML from a rendered template between other content, and then data-link the content, for live updates. (Uses JsViews for data-linking.)</div>
+<p class="buttons">
+	<button id="buttonAddMovie" >add Movie</button>
+	<button id="buttonRemoveLastMovie">remove last Movie</button>
+</p>
+
+<div class="subhead">Binding content to data by rendering a template, inserted between text nodes:</div>
+<div class="box">
+	Preceding text <span class="linkedListPlaceholder"></span> - Following text
+</div>
+
+<div class="subhead">Binding content to data by rendering a template, inserted between elements:</div>
+<div class="box">
+	<b>Preceding element </b><span class="linkedListPlaceholder"></span><b> - Following element</b>
+</div>
+
+<div class="subhead">Binding content to data by rendering a template, inserted as content of an HTML container element:</div>
+<div class="box">
+	<ul id="linkedListContainer"></ul>
+</div>
+</body>
+</html>

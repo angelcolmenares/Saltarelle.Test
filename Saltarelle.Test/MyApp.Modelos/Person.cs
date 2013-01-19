@@ -8,8 +8,7 @@ namespace MyApp.Modelos
 	[PreserveMemberCase]
 	[Serializable]
 #endif
-
-
+	
 	public class Person
 	{
 		public Person ()
@@ -17,9 +16,6 @@ namespace MyApp.Modelos
 		}
 
 		public int Id {get;set;}
-#if SALTARELLE
-		//[PreserveCase] 
-#endif
 		public string Name {get;set;}
 		public DateTime Birthday {get;set;}
 		public bool Active {get;set;}
